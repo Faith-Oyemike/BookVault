@@ -1,0 +1,17 @@
+#container{
+    background-color:grey;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.book img {
+width:50px;
+height: auto;
+}
+
+.book{
+    border: 1px solid #ccc;
+   max-width: 250px;
+    padding:15px;
+}

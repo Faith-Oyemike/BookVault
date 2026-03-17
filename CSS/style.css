@@ -6,14 +6,28 @@
     padding: 20px;
 }
 
+#header{
+text-align: center;
+margin-bottom: 20px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li{
+    display: inline;
+    margin-right: 15px;
+
+}
+
 #book{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    
-   
-    
 }
 
 .book img {
@@ -26,6 +40,22 @@ margin-bottom: 0px;
 
 .book{
     border: 1px solid #ccc;
-   max-width: 250px;
+     max-width: 350px;
     padding:15px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 15px;
+    
+    
+   
+}
+
+.book-info  {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-info  a{
+   align-self: flex-end;
+
 }

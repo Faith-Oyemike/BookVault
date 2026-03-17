@@ -1,13 +1,27 @@
 #container{
     background-color:grey;
     width: 80%;
+    max-width:1000px;
     margin: 0 auto;
     padding: 20px;
+}
+
+#book{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+   
+    
 }
 
 .book img {
 width:50px;
 height: auto;
+max-width: 400px;
+box-sizing: border-box;
+margin-bottom: 0px;
 }
 
 .book{

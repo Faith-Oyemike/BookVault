@@ -1,9 +1,16 @@
+
+
+
+
+body{
+    background: grey;
+}
 #container{
     background-color:grey;
-    width: 80%;
-    max-width:1000px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
+ 
 }
 
 #header{
@@ -31,20 +38,21 @@ nav li{
 }
 
 .book img {
-width:50px;
+width:120px;
 height: auto;
-max-width: 400px;
 box-sizing: border-box;
 margin-bottom: 0px;
+
 }
 
 .book{
     border: 1px solid #ccc;
-     max-width: 350px;
+     max-width: 500px;
     padding:15px;
     box-sizing: border-box;
     display: flex;
     gap: 15px;
+    flex:1 1 calc(50% - 20px);
     
     
    
@@ -58,4 +66,76 @@ margin-bottom: 0px;
 .book-info  a{
    align-self: flex-end;
 
+}
+
+
+/*..........MEDIA QUERY FOR IPAD.........*/
+
+@media (min-width:769px) and (max-width:1000px){
+    #container{
+        width: 95%;
+        padding: 15px;
+    }
+
+    .book{
+        padding: 20px;
+    }
+
+    .book img{
+        width: 100%;
+        height: auto;
+       
+}
+
+    #header h1{
+        font-size: 3rem;
+    }
+}
+    
+
+
+
+
+/*..........MEDIA QUERY FOR PHONE.........*/
+
+
+@media (max-width: 768px) {
+
+    #container{
+        width: 95%;
+     
+    }
+
+    #header h1{
+        font-size: 2rem;
+    }
+
+    nav ul{
+        display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    
+    nav a{
+        white-space: nowrap;
+    }
+    
+    
+    .book{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1 1 100%
+    }
+
+    .book img{
+        width: 100%;
+        height: auto;
+       
+}
+    .book-info{
+        width: 100%;
+    }
+
+    
 }

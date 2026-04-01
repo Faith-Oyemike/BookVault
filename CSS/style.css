@@ -71,18 +71,26 @@ margin-bottom: 0px;
 
 /*..........MEDIA QUERY FOR IPAD.........*/
 
-@media (min-width:769px) and (max-width:1000px){
+@media (min-width:769px) and (max-width:1024px){
     #container{
-        width: 95%;
+        width: 100%;
         padding: 15px;
     }
 
     .book{
+        
+        flex:1 1 calc(50%-20px);
         padding: 20px;
     }
 
-    .book img{
+    
+    .book-info{
         width: 100%;
+    }
+
+
+    .book img{
+        width: 50%;
         height: auto;
        
 }
@@ -138,4 +146,37 @@ margin-bottom: 0px;
     }
 
     
+}
+
+/* Payment Form */
+#card-logo {
+    display: flex;
+   text-align: center;
+   justify-content: center;
+   gap: 20px;
+  
+   
+   
+}
+
+#card-logo img{
+    width: 70px;
+    height: auto;
+    gap: none;
+}
+
+h4{
+padding: 10px;
+}
+
+
+#payment-form{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+
+.form-group{
+
 }

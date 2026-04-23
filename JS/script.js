@@ -4,6 +4,9 @@ window.onload = function(){//wait for the page to load
     //get the payment form using its id name and store it in the variable 'form'
     const form= document.getElementById("payment-form");
 
+
+    //using DOM Level 2 - addEventListener
+    if(form){// if windows is on form then 
     //listen for event- 'when submit button is clided'
     form.addEventListener("submit", function(event){
         event.preventDefault();//prevents page from refreshing
@@ -123,15 +126,76 @@ window.onload = function(){//wait for the page to load
         
 
         
-// Success Message To prove that all input are valid and works//
-alert("validation Succeded");
+//--------------------Get last 4 Digit - Only Run If Everything Passed  --------------------//
+        const lastFourDigits = cardNumber.slice(-4);//get the last four digit from the cardNumber and store in the variable "lastFourDigit"
+        console.log (lastFourDigits);//print out the digit that has been store in the variable in the console
+
+        sessionStorage.setItem("lastFourDigits",lastFourDigits);//create a tenporary Storage and store the number in the label 
+        console.log("saved:", lastFourDigits);//print message in console
 
 
 
-    });
+//--------------------SEND POST REQUEST TO API ENDPOINT--------------------//
+        //send a POST request to the API end point using Fetch and pass card details in JASON format
+        fetch("https://mudfoot.doc.stu.mmu.ac.uk/node/api/creditcard", { 
+            method:"POST",//use POST method to send data 
+            headers:{
+                "Content-Type":"application/json"//set data type in Json format
+            },
+
+            //convert javaScript Object into Json string before sending to the sever 
+            body:JSON.stringify(
+                {
+                    //store the javascript variables to the API required field 
+                    master_card: Number(cardNumber),
+                    exp_year: Number(year),
+                    exp_month: Number(month),
+                    cvv_code: securityCode
+                }
+            )
+
+        
+    })
 
 
-   
+    //after fetch request complete store the result in the variable "response "
+    .then(function(response){
+        return response.json();//convert the response from server into JSON 
+      
+   }
+      
+   )
+
+   //open the real data returned from the server 
+       .then(function(data){
+           console.log(data);//display the server response data on console 
+           const lastFourDigits = cardNumber.slice(-4); // get the last 4 digits
+           sessionStorage.setItem("lastFourDigits", lastFourDigits); // save them for success page
+             window.location.href = "success.html";//Redirect users to the success page if all validation is sucessfull
+
+         } )
+
+
+         //----------------ERROR HANDLING----------------//
+                .catch(function(error){
+                    console.error(error);
+                    alert("Payment Failed. Please Try Again");//alert message 
+                })
+
+});//end of .addeventlistener 
+}//End Of if (form )
+
+
+ //------------Successs Page Logic ----------------//
+            //find the element by id called display-card-number and store it in the variable "displayCardNumber"
+            const displayCardNumber = document.getElementById("display-card-number");
+
+            if(displayCardNumber){//if display-card-number exist then - run next code when on success page where display-card-number exist 
+           const savedLastFourDigits = sessionStorage.getItem("lastFourDigits");//get the saved digit and store in a new variable - "savedLastFourDigits"
+           displayCardNumber.textContent= "**** **** **** " + savedLastFourDigits; // Display masked card number then add/ plus the last for digits 
+                }
+
+
 
     };
 

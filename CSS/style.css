@@ -1,198 +1,257 @@
-
-
-
-
-body{
-    background: grey;
-    cursor: default;
-}
-#container{
-    background-color:grey;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
- 
+* {
+  box-sizing: border-box;
 }
 
-#header{
-text-align: center;
-margin-bottom: 20px;
+body {
+  cursor: default;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #000000 60%, rgba(255, 255, 255, 0.15));
 }
 
-nav ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+#container {
+  background: linear-gradient(to right, #ffffff 40%, rgba(255, 255, 255, 0.18)),
+    linear-gradient(to left, #000000 40%, rgba(0, 0, 0, 0.15));
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-nav li{
-    display: inline;
-    margin-right: 15px;
-
+#header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-#book{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+nav {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 12px 25px;
+  margin: 0;
+  justify-content: center;
+  gap: 25px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  padding: 8px 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: #000;
+}
+
+
+#book {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Book product card */
+.book {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .book img {
-width:120px;
-height: auto;
-box-sizing: border-box;
-margin-bottom: 0px;
-
+  width: 35%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
 }
 
-.book{
-    border: 1px solid #ccc;
-     max-width: 500px;
-    padding:15px;
-    box-sizing: border-box;
-    display: flex;
-    gap: 15px;
-    flex:1 1 calc(50% - 20px);
-    
-    
-   
+.book-info {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
 }
 
-.book-info  {
-    display: flex;
-    flex-direction: column;
+.book-info a {
+  align-self: flex-start;
 }
 
-.book-info  a{
-   align-self: flex-end;
-
+/* Payment card logos */
+#card-container {
+  margin: 25px auto;
+  padding: 18px;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
 }
 
+#card-container h4 {
+  margin: 0 0 14px 0;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.images img {
+  width: 88px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#logo img {
+  width: 60px;
+  max-width: 18vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+}
+
+#header h1 {
+  margin: 5px 0 10px;
+  letter-spacing: 2px;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
 
 /*..........MEDIA QUERY FOR IPAD.........*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  #container {
+    width: 100%;
+    padding: 15px;
+  }
 
-@media (min-width:769px) and (max-width:1024px){
-    #container{
-        width: 100%;
-        padding: 15px;
-    }
+  .book {
+    flex: 1 1 calc(50% - 20px);
+    max-width: 500px;
+  }
 
-    .book{
-        
-        flex:1 1 calc(50%-20px);
-        padding: 20px;
-    }
+  .book img {
+    width: 40%;
+    max-width: 180px;
+  }
 
-    
-    .book-info{
-        width: 100%;
-    }
+  .book-info {
+    width: 60%;
+  }
 
+  #card-container {
+    max-width: 480px;
+  }
 
-    .book img{
-        width: 50%;
-        height: auto;
-       
+  .images img {
+    width: 80px;
+  }
 }
-
-    #header h1{
-        font-size: 3rem;
-    }
-}
-    
-
-
-
 
 /*..........MEDIA QUERY FOR PHONE.........*/
-
-
 @media (max-width: 768px) {
+  #container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 18px;
+  }
 
-    #container{
-        width: 95%;
-     
-    }
+  #header h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    word-break: break-word;
+  }
 
-    #header h1{
-        font-size: 2rem;
-    }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    nav ul{
-        display: flex;
-       flex-direction: column;
-       align-items: center;
-    }
-
-
-    
-    nav a{
-        white-space: nowrap;
-    }
-    
-    
-    .book{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        flex: 1 1 100%
-    }
-
-    .book img{
-        width: 100%;
-        height: auto;
-       
-}
-    .book-info{
-        width: 100%;
-    }
-
-    
-}
-
-/* Payment Form */
-#card-container{
-    display: flex;
-   text-align: center;
-   justify-content: center;
-   gap: 15px;
-  
-   
-   
-}
-
-.images{
-    display: flex;
-   flex-wrap: nowrap;
-   
-   
-  
-}
-
-.images img{
-    width: auto;
-    height: 40px;
-    display: block;
-}
-
-
-#card-container h4{
-    margin: 0;
-    line-height: 2;
+  nav a {
     white-space: nowrap;
+  }
 
-}
+  .book {
+    flex-direction: row;
+    gap: 12px;
+    padding: 14px;
+  }
 
+  .book img {
+    width: 40%;
+    max-width: 120px;
+  }
 
-#payment-form{
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 10px;
-}
+  .book-info {
+    width: 60%;
+  }
 
-.form-group{
+  .book-info h2 {
+    font-size: 1rem;
+  }
 
+  .book-info p {
+    font-size: 0.85rem;
+  }
+
+  #logo img {
+    width: 45px;
+  }
+
+  #card-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .images img {
+    width: 72px;
+  }
+
+  #card-container h4 {
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  #payment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }

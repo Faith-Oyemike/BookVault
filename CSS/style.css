@@ -11,7 +11,7 @@ body {
 
 #container {
   background: linear-gradient(to right, #ffffff 40%, rgba(255, 255, 255, 0.18)),
-    linear-gradient(to left, #000000 40%, rgba(0, 0, 0, 0.15));
+    gitlinear-gradient(to left, #000000 40%, rgba(0, 0, 0, 0.15));
   width: 100%;
   min-height: 100vh;
   padding: 20px;
@@ -55,7 +55,6 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.4);
   color: #000;
 }
-
 
 #book {
   display: flex;
@@ -130,8 +129,6 @@ nav a:hover {
   object-fit: contain;
 }
 
-
-
 #logo {
   display: flex;
   justify-content: center;
@@ -153,7 +150,7 @@ nav a:hover {
   font-size: clamp(2rem, 5vw, 4rem);
 }
 
-/*..........MEDIA QUERY FOR IPAD.........*/
+/*..........MEDIA QUERY FOR IPAD.......*/
 @media (min-width: 769px) and (max-width: 1024px) {
   #container {
     width: 100%;

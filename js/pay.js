@@ -172,6 +172,9 @@ window.onload = function () {
 
         const mood = button.dataset.mood; //get the value for the mood from the button
 
+        //before the loop start let selectedBook equals null-no book stored yet
+        let selectedBook = null; //new variable that should hold any book stored in it - set as null when no book is stored yet
+
         books.forEach((book) => {
           const bookMood = book.dataset.mood; //get the mood for that book
 
@@ -179,12 +182,28 @@ window.onload = function () {
             //if the book mood = the selected mood
 
             book.classList.add("highlight"); //if it matches then make the book too glow
+            book.classList.remove("dim"); //remove dim effect from the selected book
+
+            if (selectedBook === null) {
+              //if the VARIABLE that stores the book is null
+              selectedBook = book; //then selectedBook = the first book that matches the mood when the loop runs
+            }
           } else {
             //if it does not match remove the glow/highlight from the book
 
             book.classList.remove("highlight");
+            book.classList.add("dim"); //make books that do not match look faded
           }
         }); //end of books.forEach
+
+        if (selectedBook) {
+          //if there is any book stored or found
+          selectedBook.scrollIntoView({
+            //then scroll through the page untill book is seen
+            behavior: "smooth", //scroll smoothly no jumps
+            block: "nearest", //bring the selected book into view without forcing it to the middle
+          });
+        }
       }); //end of .addeventlistener
     }); //end of buttons.forEach
 
@@ -198,6 +217,7 @@ window.onload = function () {
         //then loop through each book and remove higlight
         books.forEach((book) => {
           book.classList.remove("highlight");
+          book.classList.remove("dim"); //remove the faded effect from all books
         }); //end of book.forEach
       }
     }); //end of document click event

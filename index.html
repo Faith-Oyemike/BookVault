@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/pay.js"></script>
-    <script src="js/success.js"></script>
+
     <title>BookVault - Home Page</title>
 </head>
 
@@ -40,7 +40,7 @@
                 <a href="#book" class="hero-button">Browse Books</a>
             </section>
         
-        </section>
+       
 
         
 
@@ -49,7 +49,7 @@
         </div>
         <div id="book">
 
-            <div class="book">
+            <div class="book" data-mood="inspirational">
                 <img src="image/Things-Fall-Apart.png" alt="Things-Fall-Apart">
                 <div class="book-info">
                     <h3>Things Fall Apart</h3>
@@ -59,7 +59,7 @@
                 
             </div>
 
-            <div class="book">
+            <div class="book" data-mood="deep-thinking">
                 <img src="image/Between-Two-World.png" alt="Between-Two-World">
                 <div class="book-info">
                     <h3>Between Two World</h3>
@@ -70,7 +70,7 @@
                 
             </div>
 
-            <div class="book">
+            <div class="book" data-mood="courage">
                 <img src="image/Light-Years-Away.webp" alt="Light-Years-Away">
 
                 <div class="book-info">
@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="book">
+            <div class="book" data-mood="emotional">
                 <img src="image/The-Girl-On-The-Platform.png" alt="The-Girl-On-The-Platform">
 
                 <div class="book-info">
@@ -93,6 +93,45 @@
             </div>
             
         </div>
+
+        <!---------MOOD Section-------------->
+        <section id="mood-section">
+
+            <h2>Not Sure What To Read?</h2>
+            <p>Select a mood and let BookVault guide you next pick</p>
+            <div class="mood-buttons">
+                <button type="button" data-mood="emotional">Emotional</button>
+                <button type="button" data-mood="inspirational">Inspirational</button>
+                <button type="button" data-mood="deep-thinking">Deep Thinking </button>
+                <button type="button" data-mood="courage">Courage</button>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-base">
+                <h3>BOOKVAULT</h3>
+
+                <p>Discover meaningful stories through a modern
+                    and secure reading experience.</p>
+            </div>
+
+           <div class="footer-base">
+            <h4>Swiftly Access Links </h4>
+
+            <a href="index.html">Home</a>
+            <a href="About.html">About Us</a>
+            <a href="Contact.html">Contact Us</a>
+           </div>
+
+           <div class="footer-base">
+            <h4>Explore</h4>
+
+        <p>Curated Books</p>
+        <p>Secure Payments</p>
+        <p>Mood Recommendations</p>
+           </div>
+        </footer>
 
     </div> 
 
